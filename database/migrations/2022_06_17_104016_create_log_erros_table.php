@@ -15,7 +15,7 @@ class CreateLogErrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('log_erros', function (Blueprint $table) {
+        Schema::connection('mysql2')->create('log_erros', function (Blueprint $table) {
             $db = DB::connection('mysql')->getDatabaseName();
             $table->id();
             $table->unsignedBigInteger('id_user');
@@ -37,6 +37,6 @@ class CreateLogErrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('log_erros');
+        Schema::connection('mysql2')->dropIfExists('log_erros');
     }
 }
