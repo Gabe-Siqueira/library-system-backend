@@ -44,4 +44,7 @@ Route::group(['middleware' => ['jwt.auth']], function(){
     Route::get('apiweather/getCityByIpLocation', [ApiWeatherController::class, 'getCityByIpLocation']);
     Route::get('apiweather/getCityByName', [ApiWeatherController::class, 'getCityByName']);
 
+    // LogSystemController
+    Route::post('logsystem/recorderror', [LogSystemController::class, 'recorderror']);
+
 });
